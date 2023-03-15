@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>일정표 샘플</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/0c6a57890e.js" crossorigin="anonymous"></script>
+  <!-- <script src="https://kit.fontawesome.com/fdb840a8cc.js" crossorigin="anonymous"></script> -->
+    <style>
+        * { font-family: 'Noto Sans KR', sans-serif; }
+        a { text-decoration: none; }
+        th { text-align: center; width: 14.28%; }
+        td { height: 120px; }
+    </style>
+
+</head>
+<body style="height: 1200px;">
+  <!-- header -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark Fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand mx-5" href="#"><img src="../image/ck-logo.png" height="36px"></a>      
+            <ul class="navbar-nav">
+                  <li class="nav-item ms-3">
+                    <a class="nav-link active" href="#"><i class="fa-solid fa-table-list"></i> 게시판</a>
+                  </li>
+                  <li class="nav-itemms-3">
+                    <a class="nav-link" href="#"> 사용자</a>
+                  </li>
+                  <li class="nav-itemms-3">
+                    <a class="nav-link" href="#">API's</a>
+                  </li>  
+                  <li class="nav-itemms-3">
+                    <a class="nav-link" href="#">크롤링</a>
+                  </li>  
+                  <!-- dropdown추가해보기 -->
+                  <li class="nav-itemms-3">
+                    <a class="nav-link" href="#">인공지능</a>
+                  </li>  
+                  <li class="nav-itemms-3">
+                    <a class="nav-link activ" href="#"><i class="fa-solid fa-table-list"></i>스케줄</a>
+                  </li>  
+                  <li class="nav-itemms-3">
+                    <a class="nav-link" href="#">로그아웃</a>
+                  </li>  
+            </ul>
+                <span class="navbar-text me-2">제임스님 환영합니다.</span>
+        </div>
+    </div>
+  </nav>
+
+    <!-- *********1프로필영역/ 2스케쥴영역**************** -->
+
+  <div class="container" style="margin-top: 80px;"> 
+    <div class="row">
+        <div class="col-3">
+            <img src="https://picsum.photos/256/256" class="rounded-circle" alt="picsum 썸네일"
+                  width="90%"><br/>
+                  <!-- .mt2 -->
+                  <div class="mt2">
+                    오늘의 명언을 이 자리에 적습니다.( 이부분은 h5 적용할 필요없이 그냥 div로 적음)
+                    <a href="#"><span class="badge bg-secondary">수정</span></a>
+                  </div>
+                <div class="mt-5">
+                  <i class="fa fa-envelop me-2"></i> 이메일주소 <br>
+                  <img src="../image/github.png" height="16" class="me-2"><a href="#"> 이름닉네임 </a><br>
+                  <img src="../image/facebook.png" height="16" class="me-2"><a href="#"> 페북주소 </a><br>
+                  <img src="../image/addr.png" height="16" class="me-2">수원시 장안구<a href="#"><span class="badge bg-secondary">날씨</span></a><br>
+                  <button class="btn btn-outline-primary btn-sm mt-3">Edit Profile</button>
+                </div>
+      </div>
+        
+
+        <!-- 2일정표 영역 -->
+        <div class="col-9">
+          <h3><strong>일정표</strong></h3>
+          <hr/>
+
+          <!-- <div class="d-flex justify-content-between">
+            <div>2023-03-14(화)</div>
+            <div>화살표와 2023.03</div>
+            <div>아이콘 두개</div>
+        </div> -->
+
+
+          <div class="d-flex justify-content-between" mt-3>
+            <div class="p-2">2023-03-14(화)</div>
+            <div class="p-2">
+                <div class="pagination">
+                 <a ><i class="fa-solid fa-angles-left"></i></a>
+                 <a ><i class="fa-solid fa-angle-left ms-2"></i></a>
+                  <span class="page-item active mx-2">2023.03<span>
+                 <a ><i class="fa-solid fa-angle-right me-2"></i></a>
+                 <a ><i class="fa-solid fa-angles-right"></i></a>
+                </div>
+            </div>
+              <a href="#"><i class="fa-solid fa-pen me-3"></i></a>
+              <a href="#"><i class="fa-solid fa-table-list"></i></a>
+              </span>
+            </div>
+          </div>
+
+          <table class="table table border mt-2">
+            <tr>
+              <td class="text-danger">일</td>
+              <td>월</td><td>화</td><td>수</td><td>목</td><td>금</td>
+              <td class="text-primary">토</td>
+            </tr>
+            <tr>
+              <td class="text-danger" style="opacity: 0.5;">26</td>
+              <td style="opacity: 0.5;">27</td>
+              <td style="opacity: 0.5;">28</td>
+              <td class="text-danger">1</td>
+              <td>2</td>
+              <td>3</td>
+              <td class="text-primary">4</td>
+            </tr>
+            <tr>
+              <td class="text-danger" style="opacity: 0.5;">5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+              <td>10</td>
+              <td class="text-primary">11</td>
+            </tr>
+            <tr>
+              <td class="text-danger" style="opacity: 0.5;">12</td>
+              <td>13</td>
+              <td>
+                <div class="d-flex justify-content-between">14 화이트데이</div>
+                div
+                
+              </td>
+              <td>15</td>
+              <td>16</td>
+              <td>17</td>
+              <td class="text-primary">18</td>
+            </tr>
+            <tr>
+              <td class="text-danger" style="opacity: 0.5;">19</td>
+              <td>20</td>
+              <td>21</td>
+              <td>22</td>
+              <td>23</td>
+              <td>24</td>
+              <td class="text-primary">25</td>
+            </tr>
+            <tr>
+              <td class="text-danger" style="opacity: 0.5;">26</td>
+              <td>27</td>
+              <th>28</th>
+              <th>29</th>
+              <th>30</th>
+              <th>31</th>
+            </tr>
+          </table>
+
+        </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+  <!-- footer -->
+  <nav class="navbar navbar-expand-sm bg-ligh fixed-bottom">
+    <div class="container-fluid justify-content-center">
+        copyright &copy; 2021-2023 CK World copy, All rights reserved.
+    </div>
+  </nav>
+
+
+
+</body>
+</html>

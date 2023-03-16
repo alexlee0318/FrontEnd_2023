@@ -1,7 +1,7 @@
 // switch - multi select
 
 let score = 84;
-let scoreDigit = parseInt(score / 10);     //10으로 나눈 몫의 정수 (parseInt :정수값)
+let scoreDigit = parseInt(score / 10);  //parseInt :정수값(10으로 나눈 몫인 1의 자리 숫자가 정수)
 let grade;                              //grade = 'F'로 세팅하면 밑에 default값 부분을 없애도 무방.
 
 switch(scoreDigit) {
@@ -14,7 +14,7 @@ switch(scoreDigit) {
         grade = 'C'; break;
     case 6:
         grade = 'D'; break;
-    default:        //5이하 나머지는 defaul 
+    default:        //50이하 나머지 점수는 모두 F 
         grade = 'F';
     }
     console.log(`성적: ${score}, 학점: ${grade}`);

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiplication table</title>
+    <script>
+      function multiply() {
+        let result = "";
+        for (let i = 2; i <= 9; i++) {
+          for (let k = 1; k <= 9; k++) {
+            result += `${i} * ${k} = ${i * k}<br>`;
+          }
+          result += "<br>";
+        }
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>multiply 2 to 9</h1>
+    <!-- <input type="text" id="number" placeholder="number(2~9)" /> -->
+    <button onclick="multiply()">Show Multiplication Table</button>
+    <div id="result">Start</div>
+  </body>
+</html>

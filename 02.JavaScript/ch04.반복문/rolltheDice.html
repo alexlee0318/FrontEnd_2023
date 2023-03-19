@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roll the Dice</title>
+    <script>
+      function rollDice() {
+        let dice = [];
+        for (let i = 0; i < 3; i++) {
+          dice.push(Math.ceil(Math.random() * 6));
+        }
+
+        let prize;
+        if (dice[0] == dice[1] && dice[0] == dice[2]) {
+          prize = 10000 + dice[0] * 1000;
+        } else if (dice[0] == dice[1] || dice[0] == dice[2]) {
+          prize = 1000 * dice[0] + dice[0] + dice[1] + dice[2];
+        } else if (dice[1] == dice[2]) {
+          prize = 1000 * dice[1] + dice[0] + dice[1] + dice[2];
+        } else {
+          let maxVal = dice[0];
+          for (let i = 1; i < dice.length; i++) {
+            if (maxVal < dice[i]) {
+              maxVal = dice[i];
+            }
+          }
+          prize = maxVal * 100;
+        }
+
+        document.getElementById("prize").innerHTML =
+          "You rolled : " +
+          dice.join(", ") +
+          ".<br>Your prize : " +
+          prize +
+          "won";
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Roll the Dice</h1>
+    <button onclick="rollDice()">Roll</button>
+    <div id="prize"></div>
+  </body>
+</html>

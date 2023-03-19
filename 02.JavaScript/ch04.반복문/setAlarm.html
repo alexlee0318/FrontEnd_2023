@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set alarm clock</title>
+    <script>
+      function newTime() {
+        let m = parseInt(document.getElementById("nm").value);
+        let h = parseInt(document.getElementById("nh").value);
+        let nh, nm;
+
+        if (m >= 45) {
+          nh = h;
+          nm = m - 45;
+        } else {
+          if (h == 0) {
+            nh = 23;
+            nm = m + 15;
+          } else {
+            nh = h - 1;
+            nm = m + 15;
+          }
+        }
+        document.getElementById(
+          "resTag"
+        ).innerHTML = `알람이 ${nh}시 ${nm}분에 울립니다.`;
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Set alarm clock</h1>
+    <input type="text" id="nh" placeholder="hour" />
+    <input type="text" id="nm" placeholder="minutes" />
+    <button onclick="newTime()">setting</button>
+    <div id="resTag"></div>
+  </body>
+</html>

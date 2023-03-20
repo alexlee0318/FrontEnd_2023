@@ -32,3 +32,15 @@ if (m >= 45) {
   }
 }
 console.log(`${nh}시 ${nm}분`);
+
+
+let minuite = 0; let hour = 0;
+let nhour, nMin;
+if (minuite >= 45) {
+  nHour = hour;
+  nMin= minuite - 45;
+} else {
+  nHour = (hour + 24 - 1) % 24;
+  nMin = minuite + 60 -45;
+}
+console.log(`${nh}시 ${nm}분`);

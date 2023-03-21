@@ -13,31 +13,29 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>3이 표시되는 시간은 총 몇 초인가?</title>
-  <script>
-    window.onload= function() {
-      let totalSeconds = 0;
-      for (let hour = 0; hour < 24; hour++) {
+  <head>
+    <meta charset="UTF-8" />
+    <title>Totla Seconds</title>
+    <script>
+      window.onload = function () {
+        let totalSeconds = 0;
+        for (let hour = 0; hour < 24; hour++) {
           for (let minute = 0; minute < 60; minute++) {
-               let display = hour + ':' + (minute < 10 ? '0' : '') + minute;
-               if (display.indexOf('3') >= 0)
-                   totalSeconds += 60;
+            let display = hour + ":" + (minute < 10 ? "0" : "") + minute;
+            if (display.indexOf("3") >= 0) totalSeconds += 60;
           }
-      }
-      document.getElementById('output').innerHTML = totalSeconds;
-    }
-    
-  </script>
-
-      
-</head>
-<body>
-  <!-- 아래 h1,h3이 head쪽(title바로 밑)에 가도 출력은 되지만, 대신 JS코드들이 body로 내려와야함 
-        -> 일반적인 위치는 여기 body가 맞고, 대신에 위 JS코드를 window.onload= function() {} 안에 묶어주는 것.-->
-
-  <h1>하루동안 3이 적어도 한 개 표시되는 시간은? </h1>
-  <h3>총 <span id="output"></span>초</h3>
-</body>
+        }
+        document.getElementById("output").innerHTML =
+          totalSeconds.toLocaleString() + " 초";
+      };
+    </script>
+  </head>
+  <body>
+    <!-- 제목인 h1,h3의 일반적인 위치는 body가 맞음.
+       head쪽(title바로 밑)에 가도 출력은 되지만, 대신 JS코드와 자리를 맞바꿔야 하는데 그럼 부적합.
+        -> , JS코드가 head에 있는 대신에 window.onload= function() {}로 묶어줌.-->
+    <h1>하루동안 3이 적어도 한 개 표시되는 시간은?</h1>
+    <button onclick="document.getElementById(output)">결과 확인</button>
+    <h3><span id="output"></span></h3>
+  </body>
 </html>

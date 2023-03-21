@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Number of Digits Displayed in Time</title>
+    <script>
+      function calculateSeconds(number) {
+        let totalSeconds = 0;
+        for (let hour = 0; hour < 24; hour++) {
+          for (let minute = 0; minute < 60; minute++) {
+            let display = hour + ":" + (minute < 10 ? "0" : "") + minute;
+            if (display.indexOf(number.toString()) >= 0) totalSeconds += 60;
+          }
+        }
+        document.getElementById("output").innerHTML =
+          totalSeconds.toLocaleString() + " seconds";
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Number of Digits Displayed in Time</h1>
+    <p>Enter a number:</p>
+    <input type="number" id="numberInput" />
+    <button
+      onclick="calculateSeconds(document.getElementById('numberInput').value)"
+    >
+      Calculate
+    </button>
+    <h3>
+      Total seconds in a day where at least one digit in the time is
+      <span id="numberDisplay"></span>: <span id="output"></span>
+    </h3>
+  </body>
+</html>

@@ -9,37 +9,34 @@
           cpnsole.log(isPalindrome('소주 만병만 주소'));
 -->
 
-
-
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Palindrome Checker</title>
-</head>
-<body>
-  <label for="input">단어나 문장을 입력하세요:</label>
-  <input type="text" id="input">
-  <button onclick="checkPalindrome()">확인</button>
-  <p id="output"></p>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Palindrome Checker</title>
+  </head>
+  <body>
+    <label for="input">단어나 문장을 입력하세요:</label>
+    <input type="text" id="input" />
+    <button onclick="checkPalindrome()">확인</button>
+    <p id="output"></p>
 
-  <script>
-    function isPalindrome(str) {
-      let reverseStr = '';
-      for (let i = str.length - 1; i >= 0; i--)
-        reverseStr += str[i];
-      return str == reverseStr;
-    }
-
-    function checkPalindrome() {
-      const input = document.getElementById('input').value;
-      const output = document.getElementById('output');
-      if (isPalindrome(input)) {
-        output.textContent = `"${input}" 은/는 palindrome이 맞습니다!`;
-      } else {
-        output.textContent = `"${input}" 응/는 Palindrome이 아닙니다!`;
+    <script>
+      function isPalindrome(str) {
+        let reverseStr = "";
+        for (let i = str.length - 1; i >= 0; i--) reverseStr += str[i];
+        return str == reverseStr;
       }
-    }
-  </script>
-</body>
+
+      function checkPalindrome() {
+        const input = document.getElementById("input").value;
+        const output = document.getElementById("output");
+        if (isPalindrome(input)) {
+          output.textContent = `"${input}" 은/는 palindrome이 맞습니다!`;
+        } else {
+          output.textContent = `"${input}" 응/는 Palindrome이 아닙니다!`;
+        }
+      }
+    </script>
+  </body>
 </html>

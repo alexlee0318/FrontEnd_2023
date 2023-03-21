@@ -1,0 +1,45 @@
+<!-- 
+            function strCount(str, dst){            //str에서 dst가 몇번 사용되는가
+                return str.split(dst).length -1;
+            }
+            let numStr = '';
+                for (let i = 1; i <= 1000; i++)
+                numStr += i;                    // 123456789....9991000
+            console.log(numStr.length);
+            for (let num = 0; num <= 9; num++) {
+            // let count = numStr.split(String(num)).length - 1;
+            let count = strCount(numStr, String(num));
+                console.log(`${num} 은 ${count}번 사용됨.`);
+            } 
+-->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Count Digit Occurrences in a String</title>
+</head>
+<body>
+  <ul id="output"></ul>
+  <script>
+    function strCount(str, dst) {
+      return str.split(dst).length - 1;
+    }
+
+    let numStr = '';
+    for (let i = 1; i <= 1000; i++) {
+      numStr += i;
+    }
+
+    let output = document.getElementById('output');
+    for (let num = 0; num <= 9; num++) {
+      let count = strCount(numStr, String(num));
+      let listItem = document.createElement('li');
+      listItem.textContent = `${num} is used ${count} times.`;
+      output.appendChild(listItem);
+    }
+  </script>
+</body>
+</html>

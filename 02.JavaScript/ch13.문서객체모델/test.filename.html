@@ -1,0 +1,39 @@
+<!-- 
+            const path = 'c:\\program Files\\nodejs\\node.exe'
+            let index = path.lastIndexOf('\\');
+            let filename = path.substring(index + 1);
+            console.log(filename);
+                //   방법 2
+            let pathArray = path.split('\\');
+            console.log(pathArray[pathArray.length -1]); 
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>파일이름 추출하기</title>
+      <script>
+          function showFilename() {
+            const input = document.getElementById('input').value;
+            const output = document.getElementById('output');
+            let index = input.lastIndexOf('\\');
+            let filename = input.substring(index + 1);
+            document.getElementById('output').innerHTML = filename;
+          }
+      </script>
+    </head>
+    <body>
+        <label for="input">전체 파일경로를 입력하세요</label>
+        <input type="text" id="input">
+        <button onclick="showFilename()">확인하기</button>
+        <p>파일명: <span id="output"></span></p>
+
+  </body>
+</html>
+
+
+
+
+

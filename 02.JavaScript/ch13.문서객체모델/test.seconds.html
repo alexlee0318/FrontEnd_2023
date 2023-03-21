@@ -1,0 +1,43 @@
+<!-- 
+              //디지털시계 00:00 ~ 23:00 -> 하루동안 3이 적어도 한 개 표시되는 시간은 몇초인가?
+            let totalSeconds = 0;
+            for (let hour = 0; hour < 24; hour++) {
+                for (let minute = 0; minute < 60; minute++) {
+                    let display = hour + ':' + minute;
+                    if (display.indexOf('3') >= 0)
+                        totalSeconds +=60;
+                }
+            }
+            console.log(totalSeconds);
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>3이 표시되는 시간은 총 몇 초인가?</title>
+  <script>
+    window.onload= function() {
+      let totalSeconds = 0;
+      for (let hour = 0; hour < 24; hour++) {
+          for (let minute = 0; minute < 60; minute++) {
+               let display = hour + ':' + (minute < 10 ? '0' : '') + minute;
+               if (display.indexOf('3') >= 0)
+                   totalSeconds += 60;
+          }
+      }
+      document.getElementById('output').innerHTML = totalSeconds;
+    }
+    
+  </script>
+
+      
+</head>
+<body>
+  <!-- 아래 h1,h3이 head쪽(title바로 밑)에 가도 출력은 되지만, 대신 JS코드들이 body로 내려와야함 
+        -> 일반적인 위치는 여기 body가 맞고, 대신에 위 JS코드를 window.onload= function() {} 안에 묶어주는 것.-->
+
+  <h1>하루동안 3이 적어도 한 개 표시되는 시간은? </h1>
+  <h3>총 <span id="output"></span>초</h3>
+</body>
+</html>

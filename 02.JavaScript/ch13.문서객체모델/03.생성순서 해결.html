@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성 순서 오류 해결</title>
+    <script>
+        function handler() {
+            document.querySelector('h1').style.backgroundColor = 'yellow';
+            document.querySelector('h2').style.color = 'red';
+        }
+        //해결방법 2(최적) : head의 script에 window코드 등록
+        // window.onload = handler;       //윈도우에 event handler를 등록하는 작업, ( )가 없음  --(02.screen파일과 같은 구조)
+    </script>
+</head>
+
+<!-- 해결방법 3 : body에 onloead하기 -->     
+<body onload="handler()">
+    <h1>Header 1</h1>
+    <h2>Header 2</h2>
+    <!-- 해결방법 1 : body에 script 추가 (head에 있는 document. ~ 코드 가져오기)-->
+    <!-- 단점: 길어서 유지보수 어려움 -->
+    <!-- <script>
+            document.querySelector('h1').style.backgroundColor = 'yellow';
+            document.querySelector('h2').style.color = 'red';
+    </script> -->
+
+</body>
+</html>

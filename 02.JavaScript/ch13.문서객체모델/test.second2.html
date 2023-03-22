@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Number of Digits Displayed in Time</title>
     <script>
-      function calculateSeconds(number) {
+      function calculateSeconds() {
         let totalSeconds = 0;
         for (let hour = 0; hour < 24; hour++) {
           for (let minute = 0; minute < 60; minute++) {
@@ -12,8 +12,8 @@
             if (display.indexOf(number.toString()) >= 0) totalSeconds += 60;
           }
         }
-        document.getElementById("output").innerHTML =
-          totalSeconds.toLocaleString() + " seconds";
+        document.getElementById("output").innerHTML = totalSeconds.toLocaleString() + " seconds"; 
+                  //이 결과 부분이 스크립트에 있는것과, 아래 바디의 HTML에 있는것의 결과 차이가 있을까?
       }
     </script>
   </head>
@@ -21,13 +21,9 @@
     <h1>Number of Digits Displayed in Time</h1>
     <p>Enter a number:</p>
     <input type="number" id="numberInput" />
-    <button
-      onclick="calculateSeconds(document.getElementById('numberInput').value)"
-    >
-      Calculate
-    </button>
+    <button onclick="calculateSeconds(document.getElementById('numberInput').value)"> Calculate </button>
     <h3>
-      Total seconds in a day where at least one digit in the time is
+      Total
       <span id="numberDisplay"></span>: <span id="output"></span>
     </h3>
   </body>

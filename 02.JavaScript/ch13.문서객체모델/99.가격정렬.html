@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>숫자열 변환, 정렬</title>
+    <script>
+      //심화- ;이 아닌 다른 기호가 섞인 숫자열이라면 어떻게 정렬?
+      //  오름차순일 때 해보기
+      function numsort() {
+        let num = document.getElementById("num").value;
+        arr = num.split(";");
+        let numArray = [];
+        for (let index of arr) {
+          numArray.push(Number(index));
+        }
+        numArray.sort(function (a, b) {
+          return b - a;
+        });
+        console.log(numArray);
+        document.getElementById("result").innerHTML = numArray;
+      }
+    </script>
+  </head>
+  <body>
+    <h2>
+      숫자묶음(가격)을 입력하고 버튼을 누르세요. 큰 값부터 순서대로 나열됩니다.
+    </h2>
+    <input
+      type="text"
+      id="num"
+      placeholder="숫자열 입력."
+      value="51900;83000;158000;367500;250000;59200;128500;1304000"
+    />
+    <button onclick="numsort()">정렬하기</button>
+    <p id="result"></p>
+  </body>
+</html>
+
+<!-- 3.입력으로 받은 다음의 가격을 내림차순으로 출력하는 프로그램을 만드세요.
+            51900;83000;158000;367500;250000;59200;128500;1304000 -->
+<!-- str = _____, _____, ____;
+arr = str.split('i'): 
+숫자로 변환 -> 내림차순 정렬 -->

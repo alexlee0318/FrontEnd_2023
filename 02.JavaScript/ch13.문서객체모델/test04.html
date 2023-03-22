@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital clock</title>
+    <script>
+        function twoDigit(num) {
+            return (num < 10) ? '0' + num : String(num);
+        }
+        function myDatetime(date) {         
+            return `${date.getFullYear()}-${twoDigit(date.getMonth()+1)}-${twoDigit(date.getDate())} ` + 
+                    `${twoDigit(date.getHours())}:${twoDigit(date.getMinutes())}:${twoDigit(date.getSeconds())}`;
+        }
+        window.onload = function() {
+            setInterval(function() {
+                const now = new Date();
+                const dateStr = myDatetime(now).substring( , );
+                const timeStr = myDatetime(now).substring()
+                
+                document.getElementById('date').innerHTML = dateStr;
+
+                document.getElementById('h1').src = ``;
+                document.getElementById('h2').src = ``;
+                document.getElementById('h1').src = timeStr;
+                document.getElementById('h2').src = timeStr;
+                document.getElementById('m1').src = timeStr;
+                document.getElementById('m2').src = timeStr;
+                document.getElementById('s1').src = timeStr;
+                document.getElementById('s2').src = timeStr;
+            }), 1000;
+        }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1 id="time"></h1>
+    <img id = "h1" src="./image/0.svg">   <!--  h1 = hour의 첫 자리수 -->
+    <img id = "h2" >
+    <img src="./image/Colon.jpg"; width="100px">
+    
+
+    <img id = "m1" width="100px">
+    <img id = "m2" width="100px">
+    <img id = "s1" width="100px">
+    <img id = "s2" width="100px">
+    
+    
+</body>
+</html>

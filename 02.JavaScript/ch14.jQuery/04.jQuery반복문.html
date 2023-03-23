@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04.jQuery반복문</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<!-- //짝수번쨰 위치하는 것에만 배경색상 적용하기 -->
+<script>
+    // $(document).ready(function() {
+    //     const $lis = $('li');       //   (변수명에 $는 사용 가능했었음)
+    //     for (let i = 0; i <  $lis.length; i++) {       //  i번째 요소 추출하기 시작~
+    //         if (i % 2 == 1) {                   // 두번째, 네번째 등 짝수번째를 뜻함 **0부터 시작했으니까 그담인 1번째가 짝수번째가 됨
+    //             const li =  $lis.get(i);                    //  i번째 요소 불러옴
+    //             $(li).css('backgroundColor', 'yellow');
+    //         }
+    //     }
+    //     $('li').each(function(index, element) {     // each메소드 다음의 순서* js와 다름 
+    //         if (index % 2 == 0)
+    //             $(this).css('backgroundColor', 'beige') // --> $(this)로 매핑하기(this는 해당하는 element를 가르킴)
+    //         else
+    //             $(this).css('color', 'red');
+    //     })
+    // });
+
+
+    //폰트사이즈 - 과일 : 30, 음식 : 20 
+   $(document).ready(function() {
+        const $lis = $('li');       //   (변수명에 $는 사용 가능했었음)
+        for (let i = 0; i <  $lis.length; i++) {       //  i번째 요소 추출하기 시작~
+            if (i % 2 == 1) {                   // 두번째, 네번째 등 짝수번째를 뜻함 **0부터 시작했으니까 그담인 1번째가 짝수번째가 됨
+                const li =  $lis.get(i);                    //  i번째 요소 불러옴
+                $(li).css('backgroundColor', 'yellow');
+            }
+        }
+        $('li').each(function(index, element) {     // each메소드 다음의 순서* js와 다름 
+            if (index % 2 == 0)
+                $(this).css('backgroundColor', 'beige'); // --> $(this)로 매핑하기(this는 해당하는 element를 가르킴)
+            else
+                $(this).css('color', 'red');
+        });
+        $('span').each(function(index, _) {  // element 자리에 언더바 = 안쓰겠다는 의미 
+            if (index % 2 == 0)
+                $(this).css('fontSize', '30px');
+            else
+                $(this).css('fontSize', '20px');
+        });
+    });
+
+</script>
+</head>
+<body style="margin: 40px;">
+    <!--ul#fruits +(Ent)  -->
+    <!--li.national +(Ent)  -->
+
+    <ul id="fruits"><span></span>내가 좋아하는 과일</span>
+        <li class="national">사과</li>
+        <li class="foreign">바나나</li>
+        <li class="national">키위</li>
+        <li class="foreign">파인애플</li>
+    </ul>
+    <!-- ul#food -->
+    <ul id="food"><span>내가 좋아하는 음식</span>
+        <li class="national">김치찌개</li>
+        <li class="foreign">파스타</li>
+        <li class="national">떡볶이</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 이벤트_마우스 클릭 </title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        //(a태그, btn없어도 버튼생성 가능)
+    $(document).ready(function() {
+        
+        
+        $('h1').click(function(e) {         // 클릭버튼 1) .click으로 만들기
+            alert($(this).text())})
+       
+        $('h1').on('click', function(e) {   // 클릭버튼 2) .on으로 만들기
+                alert($(this).text())});
+
+        $('h1')     
+                .on('mouseover', function(x) {$(this).css('backgroundColor', 'yellow')}) //마우스 올려놓으면 노랑
+                .on('mouseout', function(x) {$(this).css('backgroundColor', 'white')})  //빼면 흰색
+    });
+    </script>
+</head>
+<body style="margin: 40px;">
+   <h1>Header A</h1>
+   <h1>Header B</h1>
+</body>
+</html>

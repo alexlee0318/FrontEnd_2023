@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03.내림차순 정렬</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        function ans3() {
+            let priceStr = $('#price').val();
+            let prices = priceStr.split(';');
+            let newPrices = [];
+            for (let price of prices) {
+                newPrices.push(parseInt(price));
+            }
+            newPrices.sort(function(a, b) {
+                return b - a;               
+            });
+            let resultStr = '';
+            for (let element of newPrices) {
+                resultStr += element + '<br>';
+            }
+            $('#result3').html(resultStr);
+        }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h4>Q3. 내림차순 정렬</h4>
+    <hr>
+    <input type="text" id="price" class="form-control" placeholder="가격 입력">
+    <div class="text-center">
+        <button class="btn btn-primary mt-3" onclick="ans3()">확인</button>
+    </div>
+    <hr>
+    <h4 id="result3"></h4>
+</body>
+</html>

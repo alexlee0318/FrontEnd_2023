@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 이벤트</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+    
+        //  'keyup'과 'change'의 차이
+        $(document).ready(function() {
+            $('input')
+            .on('keyup', function(e) {
+                $('#keyup').html($(this).val());  //글자를 입력할 때마다 발생
+            })
+            .on('change', function(e) {
+                $('#change').html($(this).val());  //엔터 쳤을 때
+            });
+        });
+    </script>
+</head>
+<body style="margin: 40px;">
+   입력: <input type="text">
+   <hr>
+   <p>'keyup'은 지금 입력하고있는 글자를 실시간으로 보여줌: <span id="keyup"></span></p>
+   <p> 'change'는 글자를 입력하고 엔터를 치면 보여줌: <span id="change"></span></p>
+</body>
+</html>

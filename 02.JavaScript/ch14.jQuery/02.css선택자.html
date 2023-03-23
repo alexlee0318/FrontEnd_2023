@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css선택자</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+            $('#fruits').find('.national').css('backgroundColor', 'yellow'); //아래 방법과 비교
+            $('#fruits .foreign').css('color', 'red');         //css셀렉터 규칙에 의해 찾음 ('fruits .foreign')
+
+            $('.foreign').css('backgroundColor', 'beige');
+          //  $('ul').css('fontsize', '24px');   -> ul부모>자식까지 전부 수정되므로 아래처럼 span으로 따로 묶었음
+            $('span').css('fontSize', '24px');   // span(ul부분)만 수정됨
+    });
+
+
+</script>
+</head>
+<body style="margin: 40px;">
+    <!-- ul#fruits  //  li.national +(Ent) -->
+    <ul id="fruits"><span></span>내가 좋아하는 과일</span>
+        <li class="national">사과</li>
+        <li class="foreign">바나나</li>
+        <li class="national">키위</li>
+        <li class="foreign">파인애플</li>
+    </ul>
+    <!-- ul#food -->
+    <ul id="food"><span>내가 좋아하는 음식</span>
+        <li class="national">김치찌개</li>
+        <li class="foreign">파스타</li>
+        <li class="national">떡볶이</li>
+    </ul>
+</body>
+</html>

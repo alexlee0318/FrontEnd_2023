@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 속성 조작</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        
+    $(document).ready(function() {
+        $('img').attr('src','https://picsum.photos/304/236?q=2')
+                .attr('width', '320px');
+        for (let i=0; i<4; i++) {           // 4번 반복작업 -> 사진 4개 출력
+            $('<img></img>').css('margin', '5px')           // 원래 img는 닫는태그가 없지만 여기서는 써줘야 함
+                            .attr('src','https://picsum.photos/200/120?q=1' + i)
+                            .appendTo('body');  //body로 달아놓기
+                            
+        }
+    });
+    </script>
+</head>
+<body style="margin: 40px;">
+    <img>
+    <hr>
+</body>
+</html>

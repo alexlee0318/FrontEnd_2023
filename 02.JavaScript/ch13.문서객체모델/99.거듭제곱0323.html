@@ -4,33 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>조건을 만족하는 두 정수&거듭제곱 값의 Array</title>
-    <script>
-      function exponum2() {
-        let num1 = Number(document.getElementById("num1").value);
-        let num2 = Number(document.getElementById("num2").value);
-        arr = [];
-        console.log(num1, num2);
-        // 드모르간의 법칙 적용(부등호와 연산자 반대로)
-        if (
-          num1 < 1 || num1 > 20 || num2 < 10 || num2 > 30 || num1 > num2 - 4
-        ) {
-          alert(
-            "해당 범위에 있는 정수를 입력하세요. 두 수의 차이값이 최소 4 이상이어야합니다."
-          );
-          return;
-        }
-        for (let i = num1; i <= num2; i++) arr.push(2 ** i);
 
-        document.getElementById("result").innerHTML = arr;
-      }
-    </script>
+    <title>2의 거듭제곱</title>
+ 
+    <script src="11.연습문제.js"></script>
   </head>
   <body>
     <h2>2를 거듭제곱 할 지수의 범위를 입력하세요.</h2>
     <input type="text" id="num1" placeholder="1~20 사이의 정수" />
     <input type="text" id="num2" placeholder="10~30 사이의 정수" />
-    <button onclick="exponum2()">계산하기</button>
+    <button onclick="exponum()">계산하기</button>
     <p id="result"></p>
   </body>
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체 모델_01. 2의 거듭제곱</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            function ans1() {
+                let num1 = Number($('#num1').val());
+                let num2 = Number($('#num2').val());
+                if (num1 < 0 || num1 > 20 || num2 < 10 || num2 > 30 || num2 - num1 < 4) {
+                    alert('입력값의 범위를 확인하고 다시 입력하세요.');
+                    return;
+                }
+                let powerArr = [];
+                for (let i = num1; i <= num2; i++)
+                    powerArr.push(2 ** i);
+                let resultStr = '';
+                /* for (let power of powerArr)
+                    resultStr += power + '<br>'; */
+                for (let i = 0; i < powerArr.length; i++) {
+                    if ((i + 1) % 4 == 0)
+                        resultStr += powerArr[i] + '<br>';
+                    else
+                        resultStr += powerArr[i] + ', ';
+                }
+                $('#result1').html(resultStr);
+            }
+            
+            $('.btn').click(function() {
+            ans1();
+        });
+    });
+</script>
+</head>
+
+<body style="margin: 40px;">
+    <h>Q1. 2의 거듭제곱</h4>
+    <hr>
+    <input type="text" id="num1" class="form-control" placeholder="1 ~ 20">
+    <input type="text" id="num2" class="form-control mt-2" placeholder="10 ~ 30">
+    <div class="text-center">
+        <button class="btn btn-primary mt-3" onclick="ans1()">확인</button>
+    </div>
+    <hr>
+    <h4 id="result1"></h4>
+</body>
+</html>

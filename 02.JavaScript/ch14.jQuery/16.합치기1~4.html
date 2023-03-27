@@ -10,6 +10,8 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- 1번~4번 문제에 나오는 btn값을 모두 다르게 해줘야 함 -> class나 btn이름(btn1, 2...)등
+    그렇지 않으면 다른 문제들의 btn까지 모두 1번 문제에 소환됨- 오류발생  -->
     <div class="container-fluid p-3 bg-primary text-white text-center">
         <h1>연습 문제</h1>
         <p>문서객체 모델</p>
@@ -53,8 +55,6 @@
                 <input type="text" id="num2" class="form-control mt-2" placeholder="10 ~ 30">
                 <div class="text-center">
                     <button class="btn btn-primary mt-3" onclick="ans1()">확인</button>
-<!-- 1번~4번 문제에 나오는 btn값을 모두 다르게 해줘야 함 -> class나 btn이름(btn1, 2...)등
-    그렇지 않으면 다른 문제들의 btn까지 모두 1번 문제에 소환됨- 오류발생  -->
                 </div>
                 <hr>
                 <h4 id="result1"></h4>

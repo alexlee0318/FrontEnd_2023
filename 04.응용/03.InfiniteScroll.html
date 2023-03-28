@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 최신버전의 jQuery CDN 소스 추가(구글의 Hosted Libraries) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>무한 스크롤</title>
+    <script>
+        $(document).ready(function() {
+            const appendDocument = function() {
+                for (let i =0; i < 20; i++)
+                    $('<h1></h1>').text('Infinite Scroll').appendTo('body');
+            }
+            appendDocument();   //스크롤 20개 생성하고 끝
+            
+            // 초기화하여 아래에서 다시 이벤트(스크롤)연결하기
+            
+            $(window).scroll(function(e) {
+                let scrollHeight = $(window).scrollTop() + $(window).height();
+                let documentHeight = $(document).height();      //현재까지 생성된 스크롤
+
+                if (scrollHeight == documentHeight) //둘이 같아지면
+                    appendDocument();               //위의 이벤트를 다시 연결하라.
+            })
+        });
+    </script>
+</head>
+<body style="margin: 40px;">
+    <img id="image">
+</body>
+</html>
